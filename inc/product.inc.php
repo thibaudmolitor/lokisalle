@@ -1,11 +1,23 @@
-<?php $salles= getSalle(); ?>
+<?php  
+// echo '<pre>';
+// var_dump($salles);
+// echo '</pre>';
+if(isset($_GET['id'])){
+
+    $produits = getSalle(null,null,$_GET['id']);
+}
+$salles= getSalle();
+?>
 <section>
 	<h2>Salle DECOUVERTE</h2>
 	<div class="container">
 		<div class="row">
-		
+			<?php foreach ($produits as $produit): ?>
 			<div class="col-md-6">
-				<img class="img-responsive" src="" alt="">
+				
+					
+				
+				<img class="img-responsive" src="<?php echo $produit['photo']; ?>" alt="">
 				<figcaption>information complémentaire</figcaption>
 			</div>
 		
@@ -20,7 +32,11 @@
 					<span>tarif:</span>
 				</div>
 			</div>
+			<?php endforeach ?>
 		</div>
+
+
+
 		<div class="row">
 			<div class="col-md-12">
 				<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -34,16 +50,21 @@
 	
 					<!-- Wrapper for slides -->
 					<div class="carousel-inner" role="listbox">
-					  <div class="item active">
-					    <img src="" alt="">
-					  </div>
-					<?php foreach ($salles as  $salle) { ?>
+					<?php 
+						$i = 0;
 						
-					
-					  <div class="item">
+						foreach ($salles as  $salle) 
+						{ 
+							if ($salle['id_salle']!=($_GET['id'])) {
+					?>
+					  <div class="item <?php if ($i== 0) echo 'active'; ?>">
 					    <img src="<?php echo $salle['photo']; ?>" alt="">
 					  </div>
-					 <?php } ?>
+					 <?php 
+					 		$i++;
+					 	} 
+					}
+					 ?>
 	
 					  
 	

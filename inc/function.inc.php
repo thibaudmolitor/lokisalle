@@ -21,13 +21,18 @@
 
 
 // recupere les images de la base de donnée
-function getSalle($ville = null, $categorie =null){
+function getSalle($ville = null, $categorie =null, $id=null){
 	global $connexion;
 	if($ville)
 	{
 		$sql = "SELECT * FROM salle WHERE ville = '$ville'";
 	} else if($categorie){
 		$sql = "SELECT * FROM salle WHERE categorie = '$categorie'";
+	} else if($id){
+		
+		
+		$sql = "SELECT * FROM salle WHERE id_salle = '$id'";
+		
 
 	}else {
 		$sql= 'SELECT * FROM `salle`';
@@ -36,10 +41,12 @@ function getSalle($ville = null, $categorie =null){
  	$req->execute();
  	$result =$req->fetchAll();
  	
+ 	
  	return $result;
 
 
 }
+
 
 // recupere les services de la base de donnée
 function getProduit(){

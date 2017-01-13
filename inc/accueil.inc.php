@@ -3,13 +3,19 @@ if(isset($_GET['ville']))
 {
     $salles = getSalle($_GET['ville']);
 
-} else if(isset($_GET['categorie'])){
+
+
+
+}
+ else if(isset($_GET['categorie'])){
 
     $salles = getSalle(null,$_GET['categorie']);
+   
 
    
 }else{
      $salles= getSalle();
+
 }
 
 
@@ -84,13 +90,15 @@ if(isset($_GET['ville']))
 				
 						<!-- 1ere ligne d'image -->
 				<div class="row">
+                
 				<?php foreach ($salles as $salle){ ?>
+
 				
 				<!-- boucle foreach -->
 					<div class="col-sm-4 col-lg-4 col-md-4">
                     	<div class="thumbnail">
                     								<!-- src dynamique -->
-                      	  		 <a href="index.php?page=product">
+                      	  		 <a href="index.php?page=product&id=<?php echo $salle['id_salle']; ?>">
                        	   			<img class="img-responsive" src="<?php echo $salle['photo']; ?>"" alt="">
                       		  	<div class="caption">
                       		  		<!-- prix dynamique -->
