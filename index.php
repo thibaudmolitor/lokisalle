@@ -5,6 +5,7 @@
 <?php
 require_once('inc/init_session.inc.php');
 include(  'inc/header.inc.php');
+$liens=liens();
 
 ?>
 

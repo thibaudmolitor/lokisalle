@@ -1,10 +1,15 @@
 <?php 
  function liens(){
+ 	
  	if (empty($_SERVER["HTTP_REFERER"])){
- 		$url= $_SERVER."index.php?page=accueil";
- 	}else{
+ 		$url= "http://localhost/lokisalle/index.php?page=accueil";
+ 	}elseif($_SERVER['HTTP_REFERER'] !='http://localhost/lokisalle' ){
 	
+		$url= "http://localhost/lokisalle/index.php?page=accueil";	
+
+	}else{
  		$url= $_SERVER["HTTP_REFERER"];
+	
  	}	
 
  	return $url;
@@ -31,7 +36,7 @@ function getSalle($ville = null, $categorie =null, $id=null){
 	} else if($id){
 		
 		
-		$sql = "SELECT * FROM salle WHERE id_salle = '$id'";
+		$sql = "SELECT * FROM salle, produit WHERE produit.id_salle = salle.id_salle AND salle.id_salle = '$id'";
 		
 
 	}else {
@@ -40,7 +45,7 @@ function getSalle($ville = null, $categorie =null, $id=null){
 	$req= $connexion->prepare($sql);
  	$req->execute();
  	$result =$req->fetchAll();
- 	
+
  	
  	return $result;
 
