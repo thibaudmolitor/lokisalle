@@ -26,16 +26,12 @@
 
 
 // recupere les images de la base de donnée
-function getSalle($ville = null, $categorie =null, $id=null){
+function getSalle($search = null, $getSearch =null, $id=null){
 	global $connexion;
-	if($ville)
-	{
-		$sql = "SELECT * FROM salle WHERE ville = '$ville'";
-	} else if($categorie){
-		$sql = "SELECT * FROM salle WHERE categorie = '$categorie'";
+	if($search && $getSearch){	
+		$sql = "SELECT * FROM salle WHERE '$search' = '$getSearch'";
+		
 	} else if($id){
-		
-		
 		$sql = "SELECT * FROM salle, produit WHERE produit.id_salle = salle.id_salle AND salle.id_salle = '$id'";
 		
 

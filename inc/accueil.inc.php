@@ -1,7 +1,7 @@
 <?php 
 if(isset($_GET['ville']))
 {
-    $salles = getSalle($_GET['ville']);
+    $salles = getSalle('ville',$_GET['ville']);
 
 
 
@@ -9,7 +9,7 @@ if(isset($_GET['ville']))
 }
  else if(isset($_GET['categorie'])){
 
-    $salles = getSalle(null,$_GET['categorie']);
+    $salles = getSalle('categorie',$_GET['categorie']);
    
 
    

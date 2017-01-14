@@ -32,17 +32,17 @@ if(isset($_GET['id'])){
 
 					<h3>information complementaire</h3>
 					
-						<span class="glyphicon glyphicon-calendar" aria-hidden="true">arrivé le <?php echo $produit['date_arrivee']  ?>
+						<span class="glyphicon glyphicon-calendar" aria-hidden="true">arrivé le : <?php echo $produit['date_arrivee']  ?>
 						</span> 
-						<span class="glyphicon glyphicon-calendar" aria-hidden="true">depart le <?php echo $produit['date_depart']  ?></span>
+						<span class="glyphicon glyphicon-calendar" aria-hidden="true">depart le : <?php echo $produit['date_depart']  ?></span>
 						<span>tarif:<?php echo $produit['prix']  ?></span>
 					
 
 
 					
-						<span class="glyphicon  glyphicon-user" aria-hidden="true">capacité<?php echo $produit['adresse']; ?></span>
-						<span>adresse:<?php echo $produit['adresse']; ?></span>
-						<span>categorie:<?php echo $produit['categorie']; ?></span>
+						<span class="glyphicon  glyphicon-user" aria-hidden="true">capacité : <?php echo $produit['adresse']; ?></span>
+						<span>adresse : <?php echo $produit['adresse']; ?></span>
+						<span>categorie : <?php echo $produit['categorie']; ?></span>
 					
 
 					
