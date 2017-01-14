@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 12 Janvier 2017 à 17:33
--- Version du serveur :  10.1.19-MariaDB
--- Version de PHP :  5.6.28
+-- Généré le :  Sam 14 Janvier 2017 à 10:35
+-- Version du serveur :  10.1.13-MariaDB
+-- Version de PHP :  5.6.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -111,9 +111,8 @@ CREATE TABLE `produit` (
 --
 
 INSERT INTO `produit` (`id_produit`, `id_salle`, `date_arrivee`, `date_depart`, `prix`, `etat`) VALUES
-(1, 0, '2017-01-12 00:00:00', '2017-01-29 00:00:00', 100, 'reservation'),
-(2, 0, '2017-03-08 00:00:00', '2017-04-11 00:00:00', 500, 'reservation'),
-(4, 6, '2017-02-14 20:20:00', '2017-02-14 21:20:00', 400, 'libre');
+(1, 4, '2017-01-12 00:00:00', '2017-01-29 00:00:00', 100, 'reservation'),
+(2, 2, '2017-03-08 00:00:00', '2017-04-11 00:00:00', 500, 'reservation');
 
 -- --------------------------------------------------------
 
@@ -139,9 +138,9 @@ CREATE TABLE `salle` (
 --
 
 INSERT INTO `salle` (`id_salle`, `titre`, `description`, `photo`, `pays`, `ville`, `adresse`, `cp`, `capacite`, `categorie`) VALUES
-(4, 'Gaumont', 'super cine', 'http://localhost/lokisalle/img/1935425.jpg', 'france', 'lyon', 'je sais pas', 77001, 200, 'evenement'),
-(5, 'Webforce3', 'Salle de formation', 'http://localhost/lokisalle/img/1290985.jpg', 'france', 'paris', '14eme arrondissement denfert ', 75014, 50, 'formation'),
-(6, 'JdK studio ', 'Salle de formation', 'http://localhost/lokisalle/img/1484741.jpg', 'france', 'lyon', 'Tres grande salle de formation pour grand cours', 7702, 200, 'formation');
+(1, 'Madiana', 'Grande salle évenementielle', 'http://localhost/lokisalle/img/1484741.jpg', 'France', 'paris', '1er arrondissement', 75001, 200, 'evenement'),
+(2, 'Garlic', 'Salle de réunion ', 'http://localhost/lokisalle/img/1290985.jpg', 'france', 'paris', 'marne viande de poulet', 77001, 150, 'reunion'),
+(4, 'Gaumont', 'super cine', 'http://localhost/lokisalle/img/1935425.jpg', 'france', 'lyon', 'je sais pas', 77001, 200, 'evenement');
 
 --
 -- Index pour les tables exportées
@@ -163,15 +162,13 @@ ALTER TABLE `pages`
 -- Index pour la table `produit`
 --
 ALTER TABLE `produit`
-  ADD PRIMARY KEY (`id_produit`),
-  ADD KEY `id_salle` (`id_salle`);
+  ADD PRIMARY KEY (`id_produit`);
 
 --
 -- Index pour la table `salle`
 --
 ALTER TABLE `salle`
-  ADD PRIMARY KEY (`id_salle`),
-  ADD KEY `id_salle` (`id_salle`);
+  ADD PRIMARY KEY (`id_salle`);
 
 --
 -- AUTO_INCREMENT pour les tables exportées
@@ -191,12 +188,12 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT pour la table `produit`
 --
 ALTER TABLE `produit`
-  MODIFY `id_produit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_produit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `salle`
 --
 ALTER TABLE `salle`
-  MODIFY `id_salle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_salle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
