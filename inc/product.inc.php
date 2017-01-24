@@ -2,7 +2,8 @@
 
 if(isset($_GET['id'])){
 
-    $produits = getSalle(null,null,$_GET['id']);
+    $produits = 
+    getSalle(null,null,$_GET['id']);
 }
 
 
